@@ -30,4 +30,5 @@
     <servlet-name>ConsultaUsuario</servlet-name>
     <url-pattern>/consulta</url-pattern>
   </servlet-mapping>
+    
 </web-app>
