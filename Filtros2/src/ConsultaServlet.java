@@ -78,17 +78,11 @@ public class ConsultaServlet extends HttpServlet {
 	public void init(ServletConfig config) throws ServletException {
 		super.init(config);
 		
-		//Se leen los parámetros de inicialización del Servlet y
-		//se convierten en atributos del contexto para compartirlos con
-		//cualquier servlet y JSP de la aplicación
+		//Se leen los parámetros de inicialización del contexto
+		//Estos parámetros podrán ser utilizados por otros Servlet o JSP de la aplicación
 		ServletContext context = config.getServletContext();
-		context.setAttribute("URLBaseDeDatos", config.getInitParameter("URLBaseDeDatos"));
-		context.setAttribute("usuario", config.getInitParameter("usuario"));
-		context.setAttribute("password", getInitParameter("password"));
-		
-		//Se recuperan las variables de contexto de la aplicación
-		userName = (String)context.getAttribute("usuario");
-		password = (String)context.getAttribute("password");
-		url = (String)context.getAttribute("URLBaseDeDatos");
+		userName = context.getInitParameter("usuario");
+		password = context.getInitParameter("password");
+		url = context.getInitParameter("URLBaseDeDatos");
 	}
 }

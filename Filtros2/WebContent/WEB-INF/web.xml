@@ -12,23 +12,23 @@
   <servlet>
     <servlet-name>ConsultaUsuario</servlet-name>
     <servlet-class>ConsultaServlet</servlet-class>
-    <init-param>
-    	<param-name>URLBaseDeDatos</param-name>
-    	<param-value>jdbc:mysql://localhost/TiendaLibros?serverTimezone=UTC
-    	</param-value>
-    </init-param>
-    <init-param>
-    	<param-name>usuario</param-name>
-    	<param-value>root</param-value>
-    </init-param>
-    <init-param>
-    	<param-name>password</param-name>
-    	<param-value>1234</param-value>
-    </init-param>
   </servlet>
+  
   <servlet-mapping>
     <servlet-name>ConsultaUsuario</servlet-name>
     <url-pattern>/consulta</url-pattern>
   </servlet-mapping>
-    
+  
+  <context-param>
+    <param-name>URLBaseDeDatos</param-name>
+    <param-value>jdbc:mysql://localhost/TiendaLibros?serverTimezone=UTC</param-value>
+   </context-param>
+   <context-param>
+    <param-name>usuario</param-name>
+    <param-value>root</param-value>
+   </context-param>
+    <context-param>
+    <param-name>password</param-name>
+    <param-value>1234</param-value>
+    </context-param>    
 </web-app>
